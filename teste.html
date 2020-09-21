@@ -24,7 +24,7 @@
         document.getElementById("shareBtn").onclick = function () {
           FB.ui(
             {
-              display: "page",
+              display: "popup",
               method: "share_open_graph",
               action_type: "og.likes",
               action_properties: JSON.stringify({
