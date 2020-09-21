@@ -25,28 +25,22 @@
         document.getElementById("shareBtn").onclick = function () {
           FB.ui(
             {
-              method: "feed",
-              link: "https://testefbapi-di0uk7i1h.vercel.app/teste.html",
+              display: "popup",
+              method: "share_open_graph",
+              action_type: "og.likes",
+              action_properties: JSON.stringify({
+                object: "https://staging.pontoponto.com/",
+              }),
             },
-            function (response) {}
+            function (response) {
+              if (response && !response.error_message) {
+                alert("Posting");
+                console.log(response)
+              } else {
+                alert("Error Posting");
+              }
+            }
           );
-          // FB.ui(
-          //   {
-          //     display: "popup",
-          //     method: "share_open_graph",
-          //     action_type: "og.likes",
-          //     action_properties: JSON.stringify({
-          //       object: "https://staging.pontoponto.com/",
-          //     }),
-          //   },
-          //   function (response) {
-          //     if (response && !response.error_message) {
-          //       alert("Posting");
-          //     } else {
-          //       alert("Error Posting");
-          //     }
-          //   }
-          // );
         };
       };
     </script>
