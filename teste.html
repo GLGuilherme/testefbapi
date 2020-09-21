@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="fb:app_id" content="326468475362224" />
     <title>Document</title>
   </head>
   <body>
@@ -29,7 +28,7 @@
               method: "share_open_graph",
               action_type: "og.likes",
               action_properties: JSON.stringify({
-                object: "https://testefbapi-cl7dvlbsc.vercel.app/",
+                object: "https://staging.pontoponto.com/",
               }),
             },
             function (response) {
@@ -37,6 +36,7 @@
                 alert("Posting");
                 console.log(response)
               } else {
+                console.log(response)
                 alert("Error Posting");
               }
             }
